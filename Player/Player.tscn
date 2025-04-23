@@ -1,67 +1,67 @@
-[gd_scene load_steps=21 format=3 uid="uid://cq41se3gt8omh"]
+[gd_scene load_steps=21 format=3 uid="uid://chh077guqmfh2"]
 
-[ext_resource type="Script" uid="uid://bjdfwv81s4wkf" path="res://Player/p_layer.gd" id="1_6y3tv"]
-[ext_resource type="Texture2D" uid="uid://dyhkussfmnmyg" path="res://Player/Idle.png" id="1_epv77"]
-[ext_resource type="Texture2D" uid="uid://b3xp22excohfi" path="res://Player/Run.png" id="2_6y3tv"]
+[ext_resource type="Script" uid="uid://bjdfwv81s4wkf" path="res://Player/PlayerScript.gd" id="1_tok1r"]
+[ext_resource type="Texture2D" uid="uid://dyhkussfmnmyg" path="res://Player/Idle.png" id="2_ddoul"]
+[ext_resource type="Texture2D" uid="uid://b3xp22excohfi" path="res://Player/Run.png" id="3_8g4oa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj6mc"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yacc7"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5ibr"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5oim0"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4p8th"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_he25i"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjrx3"]
-atlas = ExtResource("1_epv77")
+atlas = ExtResource("2_ddoul")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nns5x"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7kse"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udj44"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdu6o"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3c33a"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(512, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxvsd"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mru2b"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(768, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo66j"]
-atlas = ExtResource("2_6y3tv")
+atlas = ExtResource("3_8g4oa")
 region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kq8as"]
@@ -131,8 +131,8 @@ animations = [{
 radius = 30.0
 height = 68.0
 
-[node name="PLayer" type="CharacterBody2D"]
-script = ExtResource("1_6y3tv")
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_tok1r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -64)
@@ -143,3 +143,16 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -33)
 shape = SubResource("CapsuleShape2D_epv77")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DashAgain" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -41)
+zoom = Vector2(1.5, 1.5)
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashAgain" to="." method="_on_dash_again_timeout"]
