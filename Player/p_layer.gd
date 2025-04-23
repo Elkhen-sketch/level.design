@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dash_timer: Timer = $Dash
+@onready var dash_again_timer: Timer = $DashAgain
 
 
 const GRAVITY = 1000
@@ -14,16 +16,13 @@ enum State { Idle, Run, Jump, Shoot }
 var current_state : State
 var muzzle_position
 var shoot_timer := 0.0  
+var is_sb = false
+var can_sb = true
 
 func _ready():
 	current_state = State.Idle
-	
-
 
 func _physics_process(delta):
-
-
-	
 	if shoot_timer <= 0:
 		player_falling(delta)
 		player_Idle(delta)
@@ -33,6 +32,16 @@ func _physics_process(delta):
 		shoot_timer -= delta
 		if shoot_timer <= 0:
 			current_state = State.Idle
+
+	if Input.is_action_just_pressed("Dash") and can_sb:
+		print("Dashed!")
+		is_sb = true
+		can_sb = false
+		dash_timer.start()
+		dash_again_timer.start()
+
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 	move_and_slide()
 	player_animations()
@@ -67,7 +76,6 @@ func player_jump(delta):
 		var direction = Input.get_axis("move_left", "move_right")
 		velocity.x += direction * Jump_horizontal * delta 
 
-
 func player_animations():
 	if current_state == State.Idle:
 		animated_sprite_2d.play("Idle")
@@ -86,3 +94,10 @@ func player_animations():
 			#animated_sprite_2d.play("Jump")
 		#State.Shoot:
 			#animated_sprite_2d.play("Shot1")
+
+
+func _on_dash_timer_timeout() -> void:
+	is_sb = false
+
+func _on_dash_again_timer_timeout() -> void:
+	can_sb = true

@@ -143,3 +143,7 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -33)
 shape = SubResource("CapsuleShape2D_epv77")
+
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="Dash" type="Timer" parent="."]
