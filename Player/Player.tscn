@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://chh077guqmfh2"]
+[gd_scene load_steps=21 format=3 uid="uid://bin8yock0snta"]
 
 [ext_resource type="Script" uid="uid://bjdfwv81s4wkf" path="res://Player/PlayerScript.gd" id="1_tok1r"]
 [ext_resource type="Texture2D" uid="uid://dyhkussfmnmyg" path="res://Player/Idle.png" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://b3xp22excohfi" path="res://Player/Run.png" id="3_8g4oa"]
-[ext_resource type="Texture2D" uid="uid://dhq4qsmky50dg" path="res://7f4e9b51a28676677c11fd759e3571a7.png" id="4_ddoul"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj6mc"]
 atlas = ExtResource("2_ddoul")
@@ -154,11 +153,6 @@ wait_time = 2.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -41)
 zoom = Vector2(1.5, 1.5)
-
-[node name="ye" type="Sprite2D" parent="."]
-position = Vector2(2, -30)
-scale = Vector2(0.170791, 0.226609)
-texture = ExtResource("4_ddoul")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashAgain" to="." method="_on_dash_again_timeout"]

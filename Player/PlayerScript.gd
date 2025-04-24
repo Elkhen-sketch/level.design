@@ -1,40 +1,30 @@
 extends CharacterBody2D
 
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_again_timer: Timer = $DashAgain
 
-
-
 const GRAVITY = 1000
 const SPEED = 300 
-const Jump = -300
+const Jump = -340
 const Jump_horizontal = 100
 const dash_speed = 900
+enum State { Idle, Run, Shoot }
 
-enum State { Idle, Run, Jump, Shoot }
 var dash_dir = 0
-
+var doubleJumped := false
 var current_state : State
-var muzzle_position
-var shoot_timer := 0.0  
 var is_sb = false
 var can_sb = true
+var gravity = -9.8
 
 func _ready():
 	current_state = State.Idle
 
 func _physics_process(delta):
-	if shoot_timer <= 0:
-		player_falling(delta)
-		player_Idle(delta)
-		player_run(delta)
-		player_jump(delta)
-	else:
-		shoot_timer -= delta
-		if shoot_timer <= 0:
-			current_state = State.Idle
+	player_falling(delta)
+	player_Idle(delta)
+	player_run(delta)
 
 	if Input.is_action_just_pressed("dash") and can_sb:
 		print("Dashed!")
@@ -43,12 +33,22 @@ func _physics_process(delta):
 		dash_timer.start()
 		dash_again_timer.start()
 
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		doubleJumped = false
+
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or !doubleJumped):
+		velocity.y = Jump
+		if !is_on_floor():
+			doubleJumped = true
+
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 
 	move_and_slide()
 	player_animations()
-	print("State: ", State.keys()[current_state])
+
 
 func player_falling(delta):
 	if !is_on_floor():
@@ -73,22 +73,12 @@ func player_run(delta):
 		animated_sprite_2d.flip_h = false if direction > 0 else true
 
 
-func player_jump(delta):
-	if Input.is_action_just_pressed("jump"):
-		velocity.y = Jump
-		current_state = State.Jump
-		
-	if !is_on_floor() and current_state == State.Jump:
-		var direction = Input.get_axis("move_left", "move_right")
-		velocity.x += direction * Jump_horizontal * delta 
-
 func player_animations():
 	if current_state == State.Idle:
 		animated_sprite_2d.play("Idle")
 	elif current_state == State.Run and animated_sprite_2d.animation != "Shot1":
 		animated_sprite_2d.play("Run")
-	elif current_state == State.Jump:
-		animated_sprite_2d.play("Jump")
+
 	elif current_state == State.Shoot:
 		animated_sprite_2d.play("Shot1")
 	#match current_state:
@@ -100,7 +90,6 @@ func player_animations():
 			#animated_sprite_2d.play("Jump")
 		#State.Shoot:
 			#animated_sprite_2d.play("Shot1")
-
 
 func _on_dash_timer_timeout() -> void:
 	is_sb = false
