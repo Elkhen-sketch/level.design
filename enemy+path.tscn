@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://sr3thwdqygoh"]
+
+[ext_resource type="PackedScene" uid="uid://d186t2lud1ixj" path="res://Enemy1.tscn" id="1_0vyk0"]
+
+[sub_resource type="Curve2D" id="Curve2D_78ahs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -46, 1, 0, 0, 0, 0, 31, 0, 0, 0, 0, 0, -47, 1)
+}
+point_count = 3
+
+[sub_resource type="GDScript" id="GDScript_78ahs"]
+resource_name = "path_follow"
+script/source = "extends PathFollow2D
+
+var speed = 1
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	progress_ratio += delta*speed
+	if progress_ratio == 1:
+		progress_ratio += delta *-speed
+"
+
+[node name="Enemy+Path" type="Path2D"]
+curve = SubResource("Curve2D_78ahs")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-46, 1)
+rotation = 0.00952352
+rotates = false
+script = SubResource("GDScript_78ahs")
+
+[node name="CharacterBody2D" parent="PathFollow2D" instance=ExtResource("1_0vyk0")]
+rotation = -0.00662242

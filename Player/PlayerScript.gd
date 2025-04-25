@@ -19,6 +19,8 @@ var is_sb = false
 var can_sb = true
 var gravity = -9.8
 
+var key_collected
+
 func _ready():
 	current_state = State.Idle
 

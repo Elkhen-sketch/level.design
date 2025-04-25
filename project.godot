@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Level design"
-run/main_scene="uid://xe2bckxvre4w"
+run/main_scene="uid://demsal43pggga"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

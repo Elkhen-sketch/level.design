@@ -4,7 +4,7 @@ extends Area2D
 @onready var restart_timer: Timer = $RestartTimer
 @onready var fire: GPUParticles2D = $Fire
 @onready var hitbox: CollisionShape2D = $Hitbox
-@onready var game_manager: Node2D = $"../../GameManager"
+@export var game_manager: Node2D
 
 
 var trap_on := false
