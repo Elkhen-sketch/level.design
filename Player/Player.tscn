@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bin8yock0snta"]
+[gd_scene load_steps=23 format=3 uid="uid://bin8yock0snta"]
 
 [ext_resource type="Script" uid="uid://bjdfwv81s4wkf" path="res://Player/PlayerScript.gd" id="1_tok1r"]
 [ext_resource type="Texture2D" uid="uid://dyhkussfmnmyg" path="res://Player/Idle.png" id="2_ddoul"]
@@ -131,6 +131,37 @@ animations = [{
 radius = 30.0
 height = 68.0
 
+[sub_resource type="FontFile" id="FontFile_tok1r"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_tok1r"]
+line_spacing = 0.0
+font = SubResource("FontFile_tok1r")
+font_size = 10
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.784314)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tok1r")
 
@@ -153,6 +184,17 @@ wait_time = 2.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -41)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -322.0
+offset_top = -118.0
+offset_right = -282.0
+offset_bottom = -95.0
+scale = Vector2(1.62385, 1.62385)
+text = "123"
+label_settings = SubResource("LabelSettings_tok1r")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashAgain" to="." method="_on_dash_again_timeout"]

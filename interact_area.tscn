@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfgoeyve7yw61"]
+
+[ext_resource type="Script" uid="uid://dvvo5hokb41b1" path="res://scripts/Interact.gd" id="1_ix586"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ecfl"]
+radius = 41.1096
+
+[node name="InteractArea" type="Area2D"]
+script = ExtResource("1_ix586")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ecfl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

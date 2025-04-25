@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_again_timer: Timer = $DashAgain
+@onready var label: Label = $Label
 
 const GRAVITY = 1000
 const SPEED = 300 
