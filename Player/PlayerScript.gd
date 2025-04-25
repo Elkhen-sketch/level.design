@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 const GRAVITY = 1000
 const SPEED = 300 
-const Jump = -340
+const Jump = -380
 const Jump_horizontal = 100
 const dash_speed = 900
 enum State { Idle, Run, Shoot }
