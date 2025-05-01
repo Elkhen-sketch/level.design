@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn72nblv438qr"]
+
+[ext_resource type="Script" uid="uid://q2p7ks8sb6xx" path="res://UI_start/start_screen.gd" id="1_qicnj"]
+[ext_resource type="Texture2D" uid="uid://vo2pwpjo1pjj" path="res://UI_start/screen ui s.png" id="1_wvete"]
+
+[node name="Start screen" type="CanvasLayer"]
+script = ExtResource("1_qicnj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = -12.0
+offset_right = 1282.0
+offset_bottom = 840.0
+scale = Vector2(0.90359, 0.76402)
+texture = ExtResource("1_wvete")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 484.0
+offset_top = 92.0
+offset_right = -491.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.997323)
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
