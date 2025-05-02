@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://ce0e56r3j3qyb"]
+[gd_scene load_steps=12 format=4 uid="uid://bxofjuvn8165e"]
 
-[ext_resource type="Texture2D" uid="uid://5071efoiko4k" path="res://tileset/updatedtiles.png" id="1_waryd"]
+[ext_resource type="Texture2D" path="res://tileset/updatedtiles.png" id="1_waryd"]
 [ext_resource type="PackedScene" uid="uid://bin8yock0snta" path="res://Player/Player.tscn" id="2_qulvd"]
 [ext_resource type="PackedScene" uid="uid://dy44pcy0p1mco" path="res://deathzone.tscn" id="3_qulvd"]
 [ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="4_oooit"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv2yaw3jqhn24"]
+
+[ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="1_akjyf"]
+[ext_resource type="Material" uid="uid://b46soku8wx0gv" path="res://fire3.tres" id="2_akjyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78ahs"]
+size = Vector2(14, 63)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_akjyf")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 19.5)
+shape = SubResource("RectangleShape2D_78ahs")
+
+[node name="Fire" type="GPUParticles2D" parent="."]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("2_akjyf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
