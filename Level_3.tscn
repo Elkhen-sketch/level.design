@@ -854,6 +854,182 @@ wait_time = 2.0
 [node name="RestartTimer" type="Timer" parent="Area2D6"]
 wait_time = 2.0
 
+[node name="Area2D7" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(50, -254)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D7"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D7"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D7"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D7"]
+wait_time = 2.0
+
+[node name="Area2D8" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(273, -255)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D8"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D8"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D8"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D8"]
+wait_time = 2.0
+
+[node name="Area2D9" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(465, -255)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D9"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D9"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D9"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D9"]
+wait_time = 2.0
+
+[node name="Area2D10" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(465, -496)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D10"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D10"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D10"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D10"]
+wait_time = 2.0
+
+[node name="Area2D11" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(320, -496)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D11"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D11"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D11"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D11"]
+wait_time = 2.0
+
+[node name="Area2D12" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(177, -496)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D12"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D12"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D12"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D12"]
+wait_time = 2.0
+
+[node name="Area2D13" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(48, -496)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D13"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D13"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D13"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D13"]
+wait_time = 2.0
+
+[node name="Area2D14" type="Area2D" parent="." node_paths=PackedStringArray("game_manager")]
+position = Vector2(705, -496)
+script = ExtResource("4_oooit")
+game_manager = NodePath("../GameManager")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D14"]
+position = Vector2(-1, -15.5)
+shape = SubResource("RectangleShape2D_v4u5w")
+
+[node name="Fire" type="GPUParticles2D" parent="Area2D14"]
+amount = 25
+lifetime = 3.0
+speed_scale = 5.0
+randomness = 0.5
+process_material = ExtResource("5_5bimo")
+
+[node name="Timer" type="Timer" parent="Area2D14"]
+wait_time = 2.0
+
+[node name="RestartTimer" type="Timer" parent="Area2D14"]
+wait_time = 2.0
+
 [node name="GameManager" parent="." instance=ExtResource("7_1mclj")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
@@ -874,3 +1050,27 @@ wait_time = 2.0
 [connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_body_entered"]
 [connection signal="timeout" from="Area2D6/Timer" to="Area2D6" method="_on_timer_timeout"]
 [connection signal="timeout" from="Area2D6/RestartTimer" to="Area2D6" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D7" to="Area2D7" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D7/Timer" to="Area2D7" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D7/RestartTimer" to="Area2D7" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D8" to="Area2D8" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D8/Timer" to="Area2D8" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D8/RestartTimer" to="Area2D8" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D9" to="Area2D9" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D9/Timer" to="Area2D9" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D9/RestartTimer" to="Area2D9" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D10" to="Area2D10" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D10/Timer" to="Area2D10" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D10/RestartTimer" to="Area2D10" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D11" to="Area2D11" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D11/Timer" to="Area2D11" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D11/RestartTimer" to="Area2D11" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D12" to="Area2D12" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D12/Timer" to="Area2D12" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D12/RestartTimer" to="Area2D12" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D13" to="Area2D13" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D13/Timer" to="Area2D13" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D13/RestartTimer" to="Area2D13" method="_on_restart_timer_timeout"]
+[connection signal="body_entered" from="Area2D14" to="Area2D14" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D14/Timer" to="Area2D14" method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D14/RestartTimer" to="Area2D14" method="_on_restart_timer_timeout"]
