@@ -1,8 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://bin8yock0snta"]
+[gd_scene load_steps=28 format=3 uid="uid://bin8yock0snta"]
 
 [ext_resource type="Script" uid="uid://bjdfwv81s4wkf" path="res://Player/PlayerScript.gd" id="1_tok1r"]
 [ext_resource type="Texture2D" uid="uid://dyhkussfmnmyg" path="res://Player/Idle.png" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://b3xp22excohfi" path="res://Player/Run.png" id="3_8g4oa"]
+[ext_resource type="Texture2D" uid="uid://k6itgdrjqaoe" path="res://Player/151515151515.png" id="4_s1rgi"]
+[ext_resource type="Texture2D" uid="uid://bcl0s4pbikmnr" path="res://Player/image-2145.png" id="5_j23h2"]
+[ext_resource type="Texture2D" uid="uid://c6d2wgsqx7cgp" path="res://Player/image-26.png" id="6_0j2ni"]
+[ext_resource type="Texture2D" uid="uid://cs1oo8cxo3jpn" path="res://Player/image-9.png" id="7_v0k0e"]
+[ext_resource type="Texture2D" uid="uid://c3c6sisncbyyv" path="res://Player/image-7.png" id="8_5wa8t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj6mc"]
 atlas = ExtResource("2_ddoul")
@@ -68,6 +73,14 @@ region = Rect2(896, 0, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_s1rgi")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bj6mc")
 }, {
 "duration": 1.0,
@@ -89,8 +102,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_qjrx3")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Idle_1",
 "speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s1rgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0j2ni")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,17 +142,45 @@ animations = [{
 "texture": SubResource("AtlasTexture_uo66j")
 }],
 "loop": true,
-"name": &"Run",
+"name": &"Run2",
 "speed": 12.0
 }, {
 "frames": [],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s1rgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j23h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0j2ni")
+}],
+"loop": true,
+"name": &"sb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s1rgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v0k0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5wa8t")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epv77"]
-radius = 30.0
+radius = 20.0
 height = 68.0
 
 [sub_resource type="FontFile" id="FontFile_tok1r"]
@@ -169,13 +221,14 @@ shadow_color = Color(0, 0, 0, 0.784314)
 script = ExtResource("1_tok1r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -64)
+position = Vector2(-5.96046e-08, -32)
+scale = Vector2(0.211861, 0.158373)
 sprite_frames = SubResource("SpriteFrames_kq8as")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -33)
+position = Vector2(1, -33)
 shape = SubResource("CapsuleShape2D_epv77")
 
 [node name="DashTimer" type="Timer" parent="."]

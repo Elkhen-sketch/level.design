@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://rtbfn608c33n"]
+[gd_scene load_steps=4 format=3 uid="uid://bslgba8eqkd4e"]
 
-[ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="1_twj1p"]
-[ext_resource type="Material" uid="uid://das5k3qunv7hp" path="res://fire2.tres" id="2_ph2su"]
+[ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="1_ov81j"]
+[ext_resource type="Material" uid="uid://dxjebm643t103" path="res://fire4.tres" id="2_ov81j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u50w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t385b"]
 size = Vector2(47, 21)
 
 [node name="FireTrap10" type="Area2D"]
-script = ExtResource("1_twj1p")
+script = ExtResource("1_ov81j")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, -1.5)
-shape = SubResource("RectangleShape2D_4u50w")
+position = Vector2(-28, -1.5)
+shape = SubResource("RectangleShape2D_t385b")
 
 [node name="Fire" type="GPUParticles2D" parent="."]
 position = Vector2(-8, 0)
 amount = 25
 lifetime = 3.0
 speed_scale = 5.0
-process_material = ExtResource("2_ph2su")
+process_material = ExtResource("2_ov81j")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

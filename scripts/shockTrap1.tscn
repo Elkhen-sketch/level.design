@@ -1,24 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv2yaw3jqhn24"]
+[gd_scene load_steps=4 format=3 uid="uid://d17ta4xabtjcp"]
 
-[ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="1_xqejs"]
-[ext_resource type="Material" uid="uid://b46soku8wx0gv" path="res://fire3.tres" id="2_wdove"]
+[ext_resource type="Script" uid="uid://bi0sr6t6i3vks" path="res://scripts/TrapScript.gd" id="1_77jtm"]
+[ext_resource type="Material" uid="uid://42nirryyfh1k" path="res://shockTrapShade.tres" id="2_77jtm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_78ahs"]
-size = Vector2(14, 63)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bt5s"]
+size = Vector2(14, 125)
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_xqejs")
+script = ExtResource("1_77jtm")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 19.5)
-shape = SubResource("RectangleShape2D_78ahs")
+position = Vector2(-1, 11.5)
+shape = SubResource("RectangleShape2D_3bt5s")
 
 [node name="Fire" type="GPUParticles2D" parent="."]
-amount = 25
-lifetime = 3.0
+emitting = false
+amount = 80
 speed_scale = 5.0
+explosiveness = 0.54
 randomness = 0.5
-process_material = ExtResource("2_wdove")
+process_material = ExtResource("2_77jtm")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

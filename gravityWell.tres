@@ -1,0 +1,28 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://wl6eqetjaj87"]
+
+[sub_resource type="Curve" id="Curve_yuxwe"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 2.29213), 0.0, 0.0, 0, 0, Vector2(0.9875, 1.34831), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_owe38"]
+curve = SubResource("Curve_yuxwe")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 71.745, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+orbit_velocity_min = -2.0
+orbit_velocity_max = 1.35
+gravity = Vector3(0, 90.8, 0)
+scale_over_velocity_curve = SubResource("CurveTexture_owe38")
+turbulence_enabled = true
+turbulence_noise_strength = 16.32
+turbulence_noise_scale = 0.21
+turbulence_noise_speed = Vector3(1, 5, 5)
+turbulence_noise_speed_random = 3.26
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.024
+turbulence_initial_displacement_min = -2.7
+turbulence_initial_displacement_max = 3.5

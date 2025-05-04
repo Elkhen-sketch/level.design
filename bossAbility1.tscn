@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqo60xbafbqfi"]
+
+[sub_resource type="Gradient" id="Gradient_yuxwe"]
+offsets = PackedFloat32Array(0, 0.35514, 0.598131, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.991584, 0.683369, 0.390586, 1, 0.756258, 0, 0.220925, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_owe38"]
+gradient = SubResource("Gradient_yuxwe")
+
+[sub_resource type="Curve" id="Curve_yuxwe"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 2.29213), 0.0, 0.0, 0, 0, Vector2(0.9875, 1.34831), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_owe38"]
+curve = SubResource("Curve_yuxwe")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7odbk"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(14.535, 71.745, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+orbit_velocity_min = -2.0
+orbit_velocity_max = 1.35
+gravity = Vector3(0, 90.8, 0)
+scale_max = 5.0
+scale_over_velocity_curve = SubResource("CurveTexture_owe38")
+color_ramp = SubResource("GradientTexture1D_owe38")
+turbulence_enabled = true
+turbulence_noise_strength = 16.32
+turbulence_noise_scale = 0.21
+turbulence_noise_speed = Vector3(1, 5, 5)
+turbulence_noise_speed_random = 3.26
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.024
+turbulence_initial_displacement_min = -2.7
+turbulence_initial_displacement_max = 3.5
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 200
+lifetime = 0.2
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_7odbk")

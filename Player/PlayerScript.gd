@@ -16,7 +16,7 @@ var dash_dir = 0
 var doubleJumped := false
 var current_state : State
 var is_sb = false
-var can_sb = true
+var can_sb = false
 var gravity = -9.8
 
 var key_collected
@@ -73,7 +73,7 @@ func player_run(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if direction != 0:
 		current_state = State.Run
-		animated_sprite_2d.flip_h = false if direction > 0 else true
+		animated_sprite_2d.flip_h = true if direction > 0 else false
 
 
 func player_animations():

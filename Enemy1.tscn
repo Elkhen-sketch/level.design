@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d186t2lud1ixj"]
 
 [ext_resource type="Script" uid="uid://bhqu6e2vxlqip" path="res://scripts/EnemyScript.gd" id="1_cj2mj"]
-[ext_resource type="Texture2D" uid="uid://b8hb7x2nd4y0y" path="res://icon.svg" id="1_qux7b"]
+[ext_resource type="Texture2D" uid="uid://jbtuev7be8qr" path="res://droid  1.png" id="2_cj2mj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cj2mj"]
 size = Vector2(124, 123)
@@ -11,7 +11,7 @@ script = ExtResource("1_cj2mj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.369681, 0.369681)
-texture = ExtResource("1_qux7b")
+texture = ExtResource("2_cj2mj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.369681, 0.369681)
